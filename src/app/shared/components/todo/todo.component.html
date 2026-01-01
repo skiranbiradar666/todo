@@ -4,10 +4,11 @@
         <div class="col-md-4">
             <div class="card p-4">
                 <div class="form-group">
-                    <input #todoInput type="text" class="form-control" placeholder="Enter Todo Data">
+                    <input type="text" class="form-control" #todoItem placeholder="Enter Todo Data">
                 </div>
                 <div class="text-right">
-                    <button (click)="addTodo()" mat-raised-button color="primary" class="btn btn-block">Add Todo</button>
+                    <button *ngIf="!isInEditMode"  mat-raised-button color="primary" class="btn btn-block">Add Todo</button>
+                    <button  *ngIf="isInEditMode" (click)="onUpdate()"  mat-raised-button color="primary" class="btn btn-block">Update Todo</button>
                 </div>
             </div>
         </div>
@@ -17,7 +18,7 @@
                 class="list-group-item d-flex justify-content-between">
                 <strong>{{todo.title}}</strong>
                 <div>
-                    <button mat-mini-fab color="primary" class="mr-4"><mat-icon>edit</mat-icon></button>
+                    <button (click)="onEdit(todo)" mat-mini-fab color="primary" class="mr-4"><mat-icon>edit</mat-icon></button>
                     <button mat-mini-fab color="warn" ><mat-icon>delete</mat-icon></button>
                 </div>
                 </li>
