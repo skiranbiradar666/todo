@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { todoArr } from 'src/app/const/todo';
 import { Itodo } from 'src/app/model/todo';
-import { SnackbarService } from '../../services/snackbar.service';
+
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { GetConfirmComponent } from 'src/app/get-confirm/get-confirm.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -14,7 +16,8 @@ export class TodoComponent implements OnInit {
    isInEditMode:boolean=false
   editId!:string
  todoData:Array<Itodo> = todoArr
-  constructor(private _snackbar : MatSnackBar) { }
+  constructor(private _snackbar : MatSnackBar, private matDialog: MatDialog) { }
+  
 
   ngOnInit(): void {
   }
