@@ -18,7 +18,9 @@
                 <strong>{{todo.title}}</strong>
                 <div>
                     <button mat-mini-fab color="primary" class="mr-4"><mat-icon>edit</mat-icon></button>
-                    <button mat-mini-fab color="warn" ><mat-icon>delete</mat-icon></button>
+                    <button 
+                    (click)="onTodoRemove('todo.id')"
+                    mat-mini-fab color="warn" ><mat-icon>delete</mat-icon></button>
                 </div>
                 </li>
                 
