@@ -8,7 +8,6 @@ import { Itodo } from 'src/app/model/todo';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
- todoData:Array<Itodo> = todoArr
   constructor() { }
 
   ngOnInit(): void {
